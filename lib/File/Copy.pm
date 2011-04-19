@@ -2,7 +2,7 @@ use v6;
 
 module File::Copy;
 
-sub cp(Str $from, Str $to, :$r!) is export {
+sub cp(Str $from, Str $to, :$r) is export {
     if ($from.IO ~~ :d and $r) {
         mkdir("$to") if $to.IO !~~ :d;
         for dir($from) -> $item {
